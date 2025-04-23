@@ -46,7 +46,7 @@ void vendor_load_properties()
         /* ms01lte */
         property_override("ro.build.description", "ms01ltexx-user 4.4.2 KOT49H G7105XXUBNI2 release-keys");        
         set_ro_product_prop("fingerprint", "samsung/ms01ltexx/ms01lte:4.4.2/KOT49H/G7105XXUBNI2:user/release-keys");
-	    gsm_properties("9", "1");
+	gsm_properties("9", "1");
 	    
     } else if (bootloader.find("G7102") == 0) {
         /* ms013g */

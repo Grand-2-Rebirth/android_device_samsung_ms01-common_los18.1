@@ -8,7 +8,9 @@ audio.offload.video=true
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicerec=false
-ro.vendor.audio.sdk.fluencetype=fluence
+persist.vendor.audio.fluence.audiorec=true
+persist.vendor.audio.handset.mic.type=digital
+ro.vendor.audio.sdk.fluencetype=none
 vendor.audio.offload.multiple.enabled=false
 vendor.audio_hal.period_size=192
 vendor.dedicated.device.for.voip=true
@@ -37,9 +39,9 @@ ro.qc.sdk.izat.service_mask=0x0
 # HDMI
 ro.hdmi.enable=true
 persist.demo.hdmirotationlock=false
-ro.hdmi.enable=true
 
 # HWUI
+debug.hwui.renderer=opengl
 debug.hwui.use_buffer_age=false
 
 # Media
@@ -58,30 +60,33 @@ mmp.enable.3g2=true
 #37491 is decimal sum of supported codecs in AAL
 #codecs: AVI AC3 ASF AAC QCP DTS 3G2 MP2TS
 mm.enable.qcom_parser=37491
+persist.media.treble_omx=false
 
 # Memory optimizations
 ro.vendor.qti.am.reschedule_service=true
 
 # NFC
-ro.nfc.port=I2C
+#ro.nfc.port=I2C
 
 # Perf
 ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
+ro.telephony.ril.config=simactivation
 persist.data.netmgrd.qos.enable=false
 persist.data.qmi.adb_logmask=0
 persist.radio.add_power_save=1
 rild.libpath=/vendor/lib/libsec-ril.so
 ro.telephony.mms_data_profile=5
 ro.ril.telephony.qan_resp_strings=6
-ro.telephony.default_network=3
 persist.radio.apm_sim_not_pwdn=1
 ro.use_data_netmgrd=false
 ro.data.large_tcp_window_size=true
-
-# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
 ro.telephony.call_ring.multiple=0
+ro.telephony.get_imsi_from_sim=true
+
+# Rotate Lockscreen
+lockscreen.rot_override=true
 
 # Sensors
 ro.qc.sdk.gestures.camera=false
@@ -93,7 +98,7 @@ debug.sensors=1
 net.tethering.noprovisioning=true
 
 # Vendor security patch level
-ro.lineage.build.vendor_security_patch=2017-08-01
+ro.lineage.build.vendor_security_patch=2022-08-03
 
 # VIDC: debug_levels
 # 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS

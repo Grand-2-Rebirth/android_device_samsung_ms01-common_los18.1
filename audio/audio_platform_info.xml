@@ -77,14 +77,13 @@
         <device name="SND_DEVICE_IN_HEADSET_MIC_FLUENCE" alias="rec-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_MIC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_HEADSET_MIC" alias="voice-call-headset-mic" />
-        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="rec-stereo-mic" />
+        <device name="SND_DEVICE_IN_CAMCORDER_MIC" alias="rec-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_DMIC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_SPEAKER_DMIC" alias="voice-call-main-mic" />
         <device name="SND_DEVICE_IN_VOICE_TTY_FULL_HEADSET_MIC" alias="TTY-full-mic" />
         <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" alias="TTY-vco-mic" />
         <device name="SND_DEVICE_IN_VOICE_TTY_HCO_HEADSET_MIC" alias="TTY-headset-mic" />
         <device name="SND_DEVICE_IN_VOICE_REC_MIC" alias="vr-main-mic" />
-        <device name="SND_DEVICE_IN_VOICE_REC_HEADSET_MIC" alias="vr-headset-mic" />
         <device name="SND_DEVICE_IN_VOICE_REC_MIC_NS" alias="svoice-NS-mic" />
         <device name="SND_DEVICE_IN_VOICE_REC_DMIC_STEREO" alias="vr-main-mic" />
         <device name="SND_DEVICE_IN_HANDSET_STEREO_DMIC" alias="rec-stereo-mic" />

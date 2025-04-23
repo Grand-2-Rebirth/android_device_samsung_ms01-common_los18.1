@@ -172,3 +172,6 @@ on boot
     chown system system /efs/gyro_cal_data
     chmod 0640 /efs/gyro_cal_data
     restorecon /efs/gyro_cal_data
+    
+on charger
+    write /sys/class/leds/lcd-backlight/brightness 150
