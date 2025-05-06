@@ -17,12 +17,14 @@ vendor.dedicated.device.for.voip=true
 vendor.voice.path.for.pcm.voip=false
 
 # Bluetooth
-ro.bluetooth.hfp.ver=1.7
-vendor.qcom.bluetooth.soc=pronto
-qcom.bt.le_dev_pwr_class=1
-ro.bluetooth.sap=true
+bluetooth.hfp.client=1
 ro.bluetooth.dun=true
+ro.bluetooth.hfp.ver=1.7
+ro.bluetooth.sap=true
+ro.bt.bdaddr_path=/efs/bluetooth/bt_addr
 ro.qualcomm.bt.hci_transport=smd
+vendor.qcom.bluetooth.soc=pronto
+vendor.bluetooth.soc=pronto
 
 # Camera
 camera2.portability.force_api=1
