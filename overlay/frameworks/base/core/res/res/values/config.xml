@@ -39,13 +39,19 @@
 
          Must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLevels">
-        <item>10</item>
-        <item>30</item>
-        <item>60</item>
+        <item>2</item>
+        <item>7</item>
+        <item>15</item>
+        <item>50</item>
         <item>100</item>
-        <item>150</item>
-        <item>210</item>
-        <item>255</item>
+        <item>200</item>
+        <item>400</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>10000</item>
+        <item>30000</item>
     </integer-array>
 
     <!-- Array of output values for LCD backlight corresponding to the LUX values
@@ -53,14 +59,20 @@
          than the size of the config_autoBrightnessLevels array.
          This must be overridden in platform specific overlays -->
     <integer-array name="config_autoBrightnessLcdBacklightValues">
-        <item>10</item>
-        <item>20</item>
-        <item>40</item>
-        <item>70</item>
-        <item>110</item>
-        <item>160</item>
-        <item>200</item>
-        <item>255</item>
+        <item>13</item>   <!-- 0-2 -->
+        <item>25</item>   <!-- 3-7 -->
+        <item>32</item>   <!-- 5-15 -->
+        <item>41</item>   <!-- 15-50 -->
+        <item>52</item>   <!-- 50-100 -->
+        <item>62</item>   <!-- 100-200 -->
+        <item>69</item>   <!-- 200-400 -->
+        <item>78</item>   <!-- 400-1000 -->
+        <item>88</item>   <!-- 1000-2000 -->
+        <item>134</item>  <!-- 2000-3000 -->
+        <item>178</item>  <!-- 3000-5000 -->
+        <item>225</item>  <!-- 5000-10000 -->
+        <item>255</item>  <!-- 10000-30000 -->
+        <item>255</item> <!-- 30000+ -->
     </integer-array>
 
     <!-- Array of output values for button backlight corresponding to the LUX values
@@ -241,4 +253,38 @@
     <string-array name="config_deviceDisabledComponents" translatable="false">
         <item>com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService</item>
     </string-array>
+    
+     <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         USB interfaces.  If the device doesn't want to support tething over USB this should
+         be empty.  An example would be "usb.*" -->
+    <string-array translatable="false" name="config_tether_usb_regexs">
+        <item>"rndis0"</item>
+        <item>"usb0"</item>
+    </string-array>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         Wifi interfaces.  If the device doesn't want to support tethering over Wifi this
+         should be empty.  An example would be "softap.*" -->
+    <string-array translatable="false" name="config_tether_wifi_regexs">
+        <item>"wlan0"</item>
+    </string-array>
+
+    <!-- List of regexpressions describing the interface (if any) that represent tetherable
+         bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
+         should be empty. -->
+    <string-array translatable="false" name="config_tether_bluetooth_regexs">
+        <item>"bt-pan"</item>
+    </string-array>
+
+    <!-- Boolean indicating whether the wifi chipset has background scan support -->
+    <bool translatable="false" name="config_wifi_background_scan_support">false</bool>
+    
+     <!-- Configure wifi tcp buffersizes in the form:
+         rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
+    <string name="config_wifi_tcp_buffers" translatable="false">524288,2097152,4194304,262144,524288,1048576</string>
+    
+    <!-- Certain sensor firmwares break with having a batch
+         size set. By setting this to false, devices can opt
+         out of setting a batch size, which fixes rotation. -->
+    <bool name="config_useDefaultBatchingForAccel">false</bool>
 </resources>
