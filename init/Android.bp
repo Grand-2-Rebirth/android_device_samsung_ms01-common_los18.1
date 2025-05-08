@@ -1,5 +1,5 @@
 //
-// Copyright (C) 2020 The LineageOS Project
+// Copyright (C) 2025 The LineageOS Project
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,18 +14,14 @@
 // limitations under the License.
 //
 
+
 cc_library_static {
     name: "libinit_ms01",
     recovery_available: true,
     srcs: ["init_ms01.cpp"],
     include_dirs: [
-        "device/samsung/msm8226-common/init",
         "system/core/include",
         "system/core/init",
     ],
-	shared_libs: [
-        "libbase",
-    ],
-    whole_static_libs: ["libinit_helpers_sam8226"]
+    shared_libs: ["libbase"],
 }
-
