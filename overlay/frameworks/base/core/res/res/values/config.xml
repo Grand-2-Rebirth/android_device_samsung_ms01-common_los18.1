@@ -22,24 +22,12 @@
      for different hardware and product builds. -->
 <resources>
 
-    <bool name="config_deskDockEnablesAccelerometer">false</bool>
-    
-    <!-- Flag indicating whether we should enable the automatic brightness in Settings.
+	<!-- Flag indicating whether we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">false</bool>
 
-    <!-- Array of output values for button backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-         This must be overridden in platform specific overlays -->
-    <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>1</item>
-        <item>1</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-    </integer-array>
-
+    <bool name="config_deskDockEnablesAccelerometer">false</bool>
+	
     <!-- Minimum screen brightness allowed by the power manager. -->
     <integer name="config_screenBrightnessDim">2</integer>
 
