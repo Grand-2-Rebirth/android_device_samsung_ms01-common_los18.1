@@ -40,8 +40,6 @@
 #include <sys/_system_properties.h>
 #include <android-base/properties.h>
 
-#define SIMSLOT_FILE "/proc/simslot_count"
-
 #include <android-base/logging.h>
 
 #include "vendor_init.h"
@@ -97,6 +95,8 @@ void set_fingerprint()
 {
 	property_override_dual("ro.build.fingerprint", "ro.boot.fingerprint", "google/walleye/walleye:11/RP1A.201005.004.A1/6934943:user/release-keys");
 	property_override("ro.build.version.security_patch", "2020-10-05");
+	// this is temp to fix bluetooth on certain devices
+	property_override("ro.boot.btmacaddr", "00:00:00:00:00:00");
 }
 
 void set_cdma_properties(const char *operator_alpha, const char *operator_numeric, const char * network)
@@ -146,17 +146,6 @@ void set_target_properties(const char *device, const char *model)
 
 	/* check and/or set fingerprint */
 	set_fingerprint();
-
-	/* check for multi-sim devices */
-
-	/* check if the simslot count file exists */
-	if (access(SIMSLOT_FILE, F_OK) == 0) {
-		int sim_count = read_integer(SIMSLOT_FILE);
-
-		/* set the dual sim props */
-		if (sim_count == 2)
-			set_dsds_properties();
-	}
 
 	char const *serial_number_file = SERIAL_NUMBER_FILE;
 	std::string serial_number;
